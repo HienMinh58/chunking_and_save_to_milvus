@@ -1,0 +1,7 @@
+chunk_dir/
+input.txt
+input1.txt
+output_test.txt
+volumes/
+*.log  # Loại trừ các file log nếu có
+*.tmp  # Loại trừ file tạm
