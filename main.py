@@ -124,8 +124,9 @@ def save_to_milvus(chunks, embeddings):
     collection.load()
     print(f"Đã lưu {len(chunks)} chunks vào Milvus.")
     
-chunk_dir_file_path = "/mnt/c/Users/phudi/OneDrive/Desktop/chat_bot_1/chunk_dir"
-input_file = "/mnt/c/Users/phudi/OneDrive/Desktop/chat_bot_1/input1.txt"
+base_dir = os.path.dirname(os.path.abspath(__file__))
+chunk_dir_file_path = os.path.join(base_dir, "chunk_dir")
+input_file = os.path.join(base_dir, "input1.txt")
 chunks = chunk_text_fixed_overlap(input_file=input_file, chunk_size=100, overlap=50, chunk_dir_file_path=chunk_dir_file_path)
 chunks = read_chunk_files(chunk_dir_file_path)
 embeddings = generate_embeddings(chunks=chunks)
